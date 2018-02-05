@@ -119,7 +119,7 @@ class MusicViewController: UIViewController {
         controlView.deleteBlock = {() in
             
         }
-        print("123")
+
         controlView.favorBlock = {(isFavor) in
             
         }
