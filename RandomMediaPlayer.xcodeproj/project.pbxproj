@@ -1,0 +1,664 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		52F87CA62027FDBD00048D54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F87CA52027FDBD00048D54 /* AppDelegate.swift */; };
+		52F87CA82027FDBD00048D54 /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F87CA72027FDBD00048D54 /* MusicViewController.swift */; };
+		52F87CAB2027FDBD00048D54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52F87CA92027FDBD00048D54 /* Main.storyboard */; };
+		52F87CAD2027FDBD00048D54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52F87CAC2027FDBD00048D54 /* Assets.xcassets */; };
+		52F87CB02027FDBD00048D54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52F87CAE2027FDBD00048D54 /* LaunchScreen.storyboard */; };
+		52F87CBB2027FDBD00048D54 /* RandomMediaPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F87CBA2027FDBD00048D54 /* RandomMediaPlayerTests.swift */; };
+		52F87CC62027FDBD00048D54 /* RandomMediaPlayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F87CC52027FDBD00048D54 /* RandomMediaPlayerUITests.swift */; };
+		52F87CD42028005E00048D54 /* Defines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F87CD32028005E00048D54 /* Defines.swift */; };
+		52F87CD6202801C900048D54 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F87CD5202801C900048D54 /* VideoViewController.swift */; };
+		52F87CD820282DDB00048D54 /* MusicCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F87CD720282DDB00048D54 /* MusicCover.swift */; };
+		52F87CDA2028536900048D54 /* MusicControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F87CD92028536900048D54 /* MusicControlView.swift */; };
+		52F87CDC20285F3E00048D54 /* Songs in Resources */ = {isa = PBXBuildFile; fileRef = 52F87CDB20285F3E00048D54 /* Songs */; };
+		F6F29DC41D4CEC56A1824097 /* Pods_RandomMediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF16E2A2CBA827CB8966FECA /* Pods_RandomMediaPlayer.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		52F87CB72027FDBD00048D54 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52F87C9A2027FDBD00048D54 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52F87CA12027FDBD00048D54;
+			remoteInfo = RandomMediaPlayer;
+		};
+		52F87CC22027FDBD00048D54 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52F87C9A2027FDBD00048D54 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52F87CA12027FDBD00048D54;
+			remoteInfo = RandomMediaPlayer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		52F87CA22027FDBD00048D54 /* RandomMediaPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomMediaPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		52F87CA52027FDBD00048D54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		52F87CA72027FDBD00048D54 /* MusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
+		52F87CAA2027FDBD00048D54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		52F87CAC2027FDBD00048D54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		52F87CAF2027FDBD00048D54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		52F87CB12027FDBD00048D54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52F87CB62027FDBD00048D54 /* RandomMediaPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandomMediaPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		52F87CBA2027FDBD00048D54 /* RandomMediaPlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomMediaPlayerTests.swift; sourceTree = "<group>"; };
+		52F87CBC2027FDBD00048D54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52F87CC12027FDBD00048D54 /* RandomMediaPlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandomMediaPlayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		52F87CC52027FDBD00048D54 /* RandomMediaPlayerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomMediaPlayerUITests.swift; sourceTree = "<group>"; };
+		52F87CC72027FDBD00048D54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52F87CD32028005E00048D54 /* Defines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defines.swift; sourceTree = "<group>"; };
+		52F87CD5202801C900048D54 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		52F87CD720282DDB00048D54 /* MusicCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCover.swift; sourceTree = "<group>"; };
+		52F87CD92028536900048D54 /* MusicControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicControlView.swift; sourceTree = "<group>"; };
+		52F87CDB20285F3E00048D54 /* Songs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Songs; sourceTree = "<group>"; };
+		BEC672636E2C1F62F73EB5D0 /* Pods-RandomMediaPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomMediaPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RandomMediaPlayer/Pods-RandomMediaPlayer.debug.xcconfig"; sourceTree = "<group>"; };
+		CCE388A7768D22BF25943CD0 /* Pods-RandomMediaPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomMediaPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-RandomMediaPlayer/Pods-RandomMediaPlayer.release.xcconfig"; sourceTree = "<group>"; };
+		CF16E2A2CBA827CB8966FECA /* Pods_RandomMediaPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RandomMediaPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		52F87C9F2027FDBD00048D54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6F29DC41D4CEC56A1824097 /* Pods_RandomMediaPlayer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52F87CB32027FDBD00048D54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52F87CBE2027FDBD00048D54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		52F87C992027FDBD00048D54 = {
+			isa = PBXGroup;
+			children = (
+				52F87CA42027FDBD00048D54 /* RandomMediaPlayer */,
+				52F87CB92027FDBD00048D54 /* RandomMediaPlayerTests */,
+				52F87CC42027FDBD00048D54 /* RandomMediaPlayerUITests */,
+				52F87CA32027FDBD00048D54 /* Products */,
+				87B678FD44F951CA8997DAEC /* Pods */,
+				E31BD9C19935DF4924997684 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		52F87CA32027FDBD00048D54 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52F87CA22027FDBD00048D54 /* RandomMediaPlayer.app */,
+				52F87CB62027FDBD00048D54 /* RandomMediaPlayerTests.xctest */,
+				52F87CC12027FDBD00048D54 /* RandomMediaPlayerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52F87CA42027FDBD00048D54 /* RandomMediaPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				52F87CDB20285F3E00048D54 /* Songs */,
+				52F87CA52027FDBD00048D54 /* AppDelegate.swift */,
+				52F87CA72027FDBD00048D54 /* MusicViewController.swift */,
+				52F87CD5202801C900048D54 /* VideoViewController.swift */,
+				52F87CD720282DDB00048D54 /* MusicCover.swift */,
+				52F87CD92028536900048D54 /* MusicControlView.swift */,
+				52F87CA92027FDBD00048D54 /* Main.storyboard */,
+				52F87CAC2027FDBD00048D54 /* Assets.xcassets */,
+				52F87CAE2027FDBD00048D54 /* LaunchScreen.storyboard */,
+				52F87CB12027FDBD00048D54 /* Info.plist */,
+				52F87CD32028005E00048D54 /* Defines.swift */,
+			);
+			path = RandomMediaPlayer;
+			sourceTree = "<group>";
+		};
+		52F87CB92027FDBD00048D54 /* RandomMediaPlayerTests */ = {
+			isa = PBXGroup;
+			children = (
+				52F87CBA2027FDBD00048D54 /* RandomMediaPlayerTests.swift */,
+				52F87CBC2027FDBD00048D54 /* Info.plist */,
+			);
+			path = RandomMediaPlayerTests;
+			sourceTree = "<group>";
+		};
+		52F87CC42027FDBD00048D54 /* RandomMediaPlayerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				52F87CC52027FDBD00048D54 /* RandomMediaPlayerUITests.swift */,
+				52F87CC72027FDBD00048D54 /* Info.plist */,
+			);
+			path = RandomMediaPlayerUITests;
+			sourceTree = "<group>";
+		};
+		87B678FD44F951CA8997DAEC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BEC672636E2C1F62F73EB5D0 /* Pods-RandomMediaPlayer.debug.xcconfig */,
+				CCE388A7768D22BF25943CD0 /* Pods-RandomMediaPlayer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E31BD9C19935DF4924997684 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF16E2A2CBA827CB8966FECA /* Pods_RandomMediaPlayer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		52F87CA12027FDBD00048D54 /* RandomMediaPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52F87CCA2027FDBD00048D54 /* Build configuration list for PBXNativeTarget "RandomMediaPlayer" */;
+			buildPhases = (
+				86848303B6621ED439FFDF56 /* [CP] Check Pods Manifest.lock */,
+				52F87C9E2027FDBD00048D54 /* Sources */,
+				52F87C9F2027FDBD00048D54 /* Frameworks */,
+				52F87CA02027FDBD00048D54 /* Resources */,
+				CD108968BBD80541DC656C60 /* [CP] Embed Pods Frameworks */,
+				D7148FB85DA6EBFF0ACE9D3A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RandomMediaPlayer;
+			productName = RandomMediaPlayer;
+			productReference = 52F87CA22027FDBD00048D54 /* RandomMediaPlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		52F87CB52027FDBD00048D54 /* RandomMediaPlayerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52F87CCD2027FDBD00048D54 /* Build configuration list for PBXNativeTarget "RandomMediaPlayerTests" */;
+			buildPhases = (
+				52F87CB22027FDBD00048D54 /* Sources */,
+				52F87CB32027FDBD00048D54 /* Frameworks */,
+				52F87CB42027FDBD00048D54 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52F87CB82027FDBD00048D54 /* PBXTargetDependency */,
+			);
+			name = RandomMediaPlayerTests;
+			productName = RandomMediaPlayerTests;
+			productReference = 52F87CB62027FDBD00048D54 /* RandomMediaPlayerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		52F87CC02027FDBD00048D54 /* RandomMediaPlayerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52F87CD02027FDBD00048D54 /* Build configuration list for PBXNativeTarget "RandomMediaPlayerUITests" */;
+			buildPhases = (
+				52F87CBD2027FDBD00048D54 /* Sources */,
+				52F87CBE2027FDBD00048D54 /* Frameworks */,
+				52F87CBF2027FDBD00048D54 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52F87CC32027FDBD00048D54 /* PBXTargetDependency */,
+			);
+			name = RandomMediaPlayerUITests;
+			productName = RandomMediaPlayerUITests;
+			productReference = 52F87CC12027FDBD00048D54 /* RandomMediaPlayerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		52F87C9A2027FDBD00048D54 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = xieran;
+				TargetAttributes = {
+					52F87CA12027FDBD00048D54 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					52F87CB52027FDBD00048D54 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 52F87CA12027FDBD00048D54;
+					};
+					52F87CC02027FDBD00048D54 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 52F87CA12027FDBD00048D54;
+					};
+				};
+			};
+			buildConfigurationList = 52F87C9D2027FDBD00048D54 /* Build configuration list for PBXProject "RandomMediaPlayer" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 52F87C992027FDBD00048D54;
+			productRefGroup = 52F87CA32027FDBD00048D54 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				52F87CA12027FDBD00048D54 /* RandomMediaPlayer */,
+				52F87CB52027FDBD00048D54 /* RandomMediaPlayerTests */,
+				52F87CC02027FDBD00048D54 /* RandomMediaPlayerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		52F87CA02027FDBD00048D54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52F87CB02027FDBD00048D54 /* LaunchScreen.storyboard in Resources */,
+				52F87CAD2027FDBD00048D54 /* Assets.xcassets in Resources */,
+				52F87CAB2027FDBD00048D54 /* Main.storyboard in Resources */,
+				52F87CDC20285F3E00048D54 /* Songs in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52F87CB42027FDBD00048D54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52F87CBF2027FDBD00048D54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		86848303B6621ED439FFDF56 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RandomMediaPlayer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD108968BBD80541DC656C60 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RandomMediaPlayer/Pods-RandomMediaPlayer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RandomMediaPlayer/Pods-RandomMediaPlayer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7148FB85DA6EBFF0ACE9D3A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RandomMediaPlayer/Pods-RandomMediaPlayer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		52F87C9E2027FDBD00048D54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52F87CA82027FDBD00048D54 /* MusicViewController.swift in Sources */,
+				52F87CA62027FDBD00048D54 /* AppDelegate.swift in Sources */,
+				52F87CD6202801C900048D54 /* VideoViewController.swift in Sources */,
+				52F87CD42028005E00048D54 /* Defines.swift in Sources */,
+				52F87CDA2028536900048D54 /* MusicControlView.swift in Sources */,
+				52F87CD820282DDB00048D54 /* MusicCover.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52F87CB22027FDBD00048D54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52F87CBB2027FDBD00048D54 /* RandomMediaPlayerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52F87CBD2027FDBD00048D54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52F87CC62027FDBD00048D54 /* RandomMediaPlayerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		52F87CB82027FDBD00048D54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52F87CA12027FDBD00048D54 /* RandomMediaPlayer */;
+			targetProxy = 52F87CB72027FDBD00048D54 /* PBXContainerItemProxy */;
+		};
+		52F87CC32027FDBD00048D54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52F87CA12027FDBD00048D54 /* RandomMediaPlayer */;
+			targetProxy = 52F87CC22027FDBD00048D54 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		52F87CA92027FDBD00048D54 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52F87CAA2027FDBD00048D54 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		52F87CAE2027FDBD00048D54 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52F87CAF2027FDBD00048D54 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		52F87CC82027FDBD00048D54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		52F87CC92027FDBD00048D54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		52F87CCB2027FDBD00048D54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEC672636E2C1F62F73EB5D0 /* Pods-RandomMediaPlayer.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X6DDKY7VC2;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = RandomMediaPlayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cn.RandomMediaPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		52F87CCC2027FDBD00048D54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCE388A7768D22BF25943CD0 /* Pods-RandomMediaPlayer.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X6DDKY7VC2;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = RandomMediaPlayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cn.RandomMediaPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		52F87CCE2027FDBD00048D54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RandomMediaPlayerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cn.randomMediaPlayer.RandomMediaPlayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RandomMediaPlayer.app/RandomMediaPlayer";
+			};
+			name = Debug;
+		};
+		52F87CCF2027FDBD00048D54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RandomMediaPlayerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cn.randomMediaPlayer.RandomMediaPlayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RandomMediaPlayer.app/RandomMediaPlayer";
+			};
+			name = Release;
+		};
+		52F87CD12027FDBD00048D54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RandomMediaPlayerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cn.randomMediaPlayer.RandomMediaPlayerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RandomMediaPlayer;
+			};
+			name = Debug;
+		};
+		52F87CD22027FDBD00048D54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RandomMediaPlayerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cn.randomMediaPlayer.RandomMediaPlayerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RandomMediaPlayer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		52F87C9D2027FDBD00048D54 /* Build configuration list for PBXProject "RandomMediaPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52F87CC82027FDBD00048D54 /* Debug */,
+				52F87CC92027FDBD00048D54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52F87CCA2027FDBD00048D54 /* Build configuration list for PBXNativeTarget "RandomMediaPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52F87CCB2027FDBD00048D54 /* Debug */,
+				52F87CCC2027FDBD00048D54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52F87CCD2027FDBD00048D54 /* Build configuration list for PBXNativeTarget "RandomMediaPlayerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52F87CCE2027FDBD00048D54 /* Debug */,
+				52F87CCF2027FDBD00048D54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52F87CD02027FDBD00048D54 /* Build configuration list for PBXNativeTarget "RandomMediaPlayerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52F87CD12027FDBD00048D54 /* Debug */,
+				52F87CD22027FDBD00048D54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 52F87C9A2027FDBD00048D54 /* Project object */;
+}
