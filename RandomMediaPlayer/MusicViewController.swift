@@ -121,7 +121,7 @@ class MusicViewController: UIViewController {
         }
 
         controlView.favorBlock = {(isFavor) in
-            
+            print(isFavor)
         }
         
 
