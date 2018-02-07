@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52517C49202945010092C534 /* MusicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52517C48202945010092C534 /* MusicManager.swift */; };
+		52517C4B202958EB0092C534 /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52517C4A202958EB0092C534 /* MusicPlayer.swift */; };
+		52517C4D202974D00092C534 /* MusicSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52517C4C202974D00092C534 /* MusicSegment.swift */; };
+		52517C4F2029757B0092C534 /* MusicSegment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52517C4E2029757B0092C534 /* MusicSegment.xib */; };
+		52EE4131202ACF0C008F6F78 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EE4130202ACF0C008F6F78 /* TabbarController.swift */; };
+		52EE4133202AD60A008F6F78 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EE4132202AD60A008F6F78 /* VideoTableViewCell.swift */; };
+		52EE4135202ADA6B008F6F78 /* Videos in Resources */ = {isa = PBXBuildFile; fileRef = 52EE4134202ADA6B008F6F78 /* Videos */; };
+		52EE4137202ADFF2008F6F78 /* VideoDescriptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52EE4136202ADFF2008F6F78 /* VideoDescriptions.plist */; };
 		52F87CA62027FDBD00048D54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F87CA52027FDBD00048D54 /* AppDelegate.swift */; };
 		52F87CA82027FDBD00048D54 /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F87CA72027FDBD00048D54 /* MusicViewController.swift */; };
 		52F87CAB2027FDBD00048D54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52F87CA92027FDBD00048D54 /* Main.storyboard */; };
@@ -40,6 +48,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		52517C48202945010092C534 /* MusicManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicManager.swift; sourceTree = "<group>"; };
+		52517C4A202958EB0092C534 /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
+		52517C4C202974D00092C534 /* MusicSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSegment.swift; sourceTree = "<group>"; };
+		52517C4E2029757B0092C534 /* MusicSegment.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicSegment.xib; sourceTree = "<group>"; };
+		52EE4130202ACF0C008F6F78 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
+		52EE4132202AD60A008F6F78 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
+		52EE4134202ADA6B008F6F78 /* Videos */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Videos; sourceTree = "<group>"; };
+		52EE4136202ADFF2008F6F78 /* VideoDescriptions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = VideoDescriptions.plist; sourceTree = "<group>"; };
 		52F87CA22027FDBD00048D54 /* RandomMediaPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomMediaPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52F87CA52027FDBD00048D54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52F87CA72027FDBD00048D54 /* MusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
@@ -114,17 +130,25 @@
 		52F87CA42027FDBD00048D54 /* RandomMediaPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				52EE4134202ADA6B008F6F78 /* Videos */,
 				52F87CDB20285F3E00048D54 /* Songs */,
 				52F87CA52027FDBD00048D54 /* AppDelegate.swift */,
+				52EE4130202ACF0C008F6F78 /* TabbarController.swift */,
 				52F87CA72027FDBD00048D54 /* MusicViewController.swift */,
-				52F87CD5202801C900048D54 /* VideoViewController.swift */,
 				52F87CD720282DDB00048D54 /* MusicCover.swift */,
+				52517C4C202974D00092C534 /* MusicSegment.swift */,
+				52517C4E2029757B0092C534 /* MusicSegment.xib */,
 				52F87CD92028536900048D54 /* MusicControlView.swift */,
+				52517C48202945010092C534 /* MusicManager.swift */,
+				52517C4A202958EB0092C534 /* MusicPlayer.swift */,
 				52F87CA92027FDBD00048D54 /* Main.storyboard */,
+				52F87CD5202801C900048D54 /* VideoViewController.swift */,
+				52EE4132202AD60A008F6F78 /* VideoTableViewCell.swift */,
 				52F87CAC2027FDBD00048D54 /* Assets.xcassets */,
 				52F87CAE2027FDBD00048D54 /* LaunchScreen.storyboard */,
 				52F87CB12027FDBD00048D54 /* Info.plist */,
 				52F87CD32028005E00048D54 /* Defines.swift */,
+				52EE4136202ADFF2008F6F78 /* VideoDescriptions.plist */,
 			);
 			path = RandomMediaPlayer;
 			sourceTree = "<group>";
@@ -236,6 +260,11 @@
 					52F87CA12027FDBD00048D54 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					52F87CB52027FDBD00048D54 = {
 						CreatedOnToolsVersion = 9.2;
@@ -274,7 +303,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52EE4135202ADA6B008F6F78 /* Videos in Resources */,
 				52F87CB02027FDBD00048D54 /* LaunchScreen.storyboard in Resources */,
+				52517C4F2029757B0092C534 /* MusicSegment.xib in Resources */,
+				52EE4137202ADFF2008F6F78 /* VideoDescriptions.plist in Resources */,
 				52F87CAD2027FDBD00048D54 /* Assets.xcassets in Resources */,
 				52F87CAB2027FDBD00048D54 /* Main.storyboard in Resources */,
 				52F87CDC20285F3E00048D54 /* Songs in Resources */,
@@ -356,7 +388,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52517C4D202974D00092C534 /* MusicSegment.swift in Sources */,
 				52F87CA82027FDBD00048D54 /* MusicViewController.swift in Sources */,
+				52517C49202945010092C534 /* MusicManager.swift in Sources */,
+				52EE4133202AD60A008F6F78 /* VideoTableViewCell.swift in Sources */,
+				52EE4131202ACF0C008F6F78 /* TabbarController.swift in Sources */,
+				52517C4B202958EB0092C534 /* MusicPlayer.swift in Sources */,
 				52F87CA62027FDBD00048D54 /* AppDelegate.swift in Sources */,
 				52F87CD6202801C900048D54 /* VideoViewController.swift in Sources */,
 				52F87CD42028005E00048D54 /* Defines.swift in Sources */,

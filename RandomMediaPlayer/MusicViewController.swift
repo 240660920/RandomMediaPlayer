@@ -8,14 +8,26 @@
 
 import UIKit
 import AVFoundation
+import MediaPlayer
 
-class MusicViewController: UIViewController {
+class TrapezoidBackground: UIView {
+    override func draw(_ rect: CGRect) {
+        let context = UIGraphicsGetCurrentContext()
+        context?.move(to: CGPoint(x: 0, y: rect.height / 3 * 2))
+        context?.addLine(to: CGPoint(x: rect.width, y: rect.height / 3))
+        context?.addLine(to: CGPoint(x: rect.width, y: rect.height))
+        context?.addLine(to: CGPoint(x: 0, y: rect.height))
+        context?.addLine(to: CGPoint(x: 0, y: rect.height / 3 * 2))
+        context?.setFillColor(UIColor(red: 0x21/255.0, green: 0x21/255.0, blue: 0x21/255.0, alpha: 1).cgColor)
+        context?.fillPath()
+    }
+}
 
-    var player = AVAudioPlayer()
+class MusicViewController: UIViewController,AVAudioPlayerDelegate {
     
-    let cover = MusicCover()
+    var musicPlayer: MusicPlayer!
 
-    var musics = [Any]()
+    let cover = MusicCover()
     
     lazy var songNameLabel: UILabel = {
         let label = UILabel()
@@ -73,12 +85,20 @@ class MusicViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.tabBarItem.title = "music"
+        NotificationCenter.default.addObserver(self, selector: #selector(playInterrpted), name: Notification.Name.AVAudioSessionInterruption, object: nil)
         
-        view.backgroundColor = backgroundColor
+        MPRemoteCommandCenter.shared().playCommand.addTarget(self, action: #selector(resumePlay))
+        MPRemoteCommandCenter.shared().pauseCommand.addTarget(self, action: #selector(pause))
+        MPRemoteCommandCenter.shared().previousTrackCommand.addTarget(self, action: #selector(remoteCommandPrevious))
+        MPRemoteCommandCenter.shared().nextTrackCommand.addTarget(self, action: #selector(remoteCommandNext))
         
-        titleLabel.text = "测试"
+        view.backgroundColor = yellowBackgroundColor
+        
+        titleLabel.text = "Music"
 
+        let trapeBg = TrapezoidBackground(frame: self.view.bounds)
+        trapeBg.backgroundColor = UIColor.clear
+        view.addSubview(trapeBg)
         
         view.addSubview(blackMask)
         
@@ -86,71 +106,141 @@ class MusicViewController: UIViewController {
         cover.backgroundColor = blackMask.backgroundColor
         blackMask.addSubview(cover)
         
+        let segment = Bundle.main.loadNibNamed("MusicSegment", owner: nil, options: nil)![0] as! MusicSegment
+        blackMask.addSubview(segment)
+        segment.snp.makeConstraints { (make) in
+            make.top.centerX.equalToSuperview()
+            make.width.equalTo(269)
+            make.height.equalTo(80)
+        }
+        segment.clickBlock = {(type: MusicListType) in
+            MusicManager.listType = type
+            
+            self.prepare(true)
+        }
+        
+        
+        updateConstraints()
 
-        controlView.playBlock = {(isPlaying) in
-            if isPlaying {
-                do {
-                    let url = self.firstSongPath()
-                    try self.player = AVAudioPlayer(contentsOf: url)
-                    self.player.play()
-                    
-                    self.songNameLabel.text = (url.lastPathComponent as NSString).deletingPathExtension
-                    
-                    let asset = AVURLAsset(url: url)
-                    
-                    let artists = AVMetadataItem.metadataItems(from: asset.commonMetadata, withKey: AVMetadataKey.commonKeyArtist, keySpace: AVMetadataKeySpace.common)
-
-                    if artists.count > 0 , let artist = artists[0].value as? String {
-                        self.singerNameLabel.text = artist
-                    }
-                } catch {
-                    let alert = UIAlertController(title: "播放错误", message: nil, preferredStyle: UIAlertControllerStyle.alert)
-                    let action = UIAlertAction(title: "确定", style: UIAlertActionStyle.default, handler: { (action) in
-                        alert.dismiss(animated: false, completion: nil)
-                    })
-                    alert.addAction(action)
-                    self.present(alert, animated: true, completion: nil)
+        
+        controlView.playBlock = {(shoudPlay) -> Bool in
+            guard self.musicPlayer != nil else {
+                return false
+            }
+            
+            if shoudPlay , MusicManager.currentMusic() != nil{
+                let result = self.musicPlayer.play()
+                if result {
+                    self.cover.startRotating()
                 }
+                return result
             } else {
-                self.player.pause()
+                self.cover.stopRotating()
+                self.musicPlayer.pause()
+                return false
             }
         }
         
         controlView.deleteBlock = {() in
+            if let music = MusicManager.currentMusic() {
+                MusicManager.delete(music)
+                
+                if let image = music.artwork {
+                    self.cover.imageLayer.contents = image
+                }
+            } else {
+                self.cover.imageLayer.contents = nil
+            }
             
+            let shouldPlay = MusicManager.list(ofType: MusicManager.listType).count > 0
+            self.prepare(shouldPlay)
+            
+            if MusicManager.likeArr.count == 0 {
+                self.controlView.setFavor(false)                
+            }
         }
 
         controlView.favorBlock = {(isFavor) in
-            print(isFavor)
-        }
-        
-
-        
-        updateConstraints()
-    }
-    
-    func firstSongPath() -> URL {
-        let paths = Bundle.main.paths(forResourcesOfType: nil, inDirectory: "Songs")
-        for (index,path) in paths.enumerated() {
-            let url = NSURL(fileURLWithPath: path)
-            if let name = url.lastPathComponent{
-                print((name as NSString).deletingPathExtension)
+            if let music = MusicManager.currentMusic() {
+                MusicManager.like(music)
+                
+                return music.isFavor
+            } else {
+                return false
             }
         }
         
-        if paths.count > 0 {
-            return URL(fileURLWithPath: paths[0])
+
+        MusicManager.initializeData()
+                
+        //准备好recommend列表的歌曲，但是不播放
+        prepare(false)
+    }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        prepare(true)
+    }
+    
+    @objc func playInterrpted() {
+        self.pause()
+    }
+
+    
+    func prepare(_ shouldPlay: Bool) {
+        if self.musicPlayer != nil {
+            self.musicPlayer.stop()
+        }
+        
+        let list = MusicManager.list(ofType: MusicManager.listType)
+        if list.count > 0 {
+            let random = Int(arc4random_uniform(UInt32(list.count)))
+            MusicManager.currentIndex = random
+            
+            let music = list[random]
+            
+            self.musicPlayer = MusicPlayer(resourcePath: music.resourcePath())
+            self.musicPlayer.delegate = self
+            
+            self.songNameLabel.text = music.name
+            self.singerNameLabel.text = music.artist
+            
+            self.cover.imageLayer.contents = music.artwork?.cgImage
+            
+            self.controlView.setFavor(music.isFavor)
+            
+            if shouldPlay {
+                self.resumePlay()
+            }
+            
         } else {
-            return URL(fileURLWithPath: "")
+            self.songNameLabel.text = ""
+            self.singerNameLabel.text = ""
+            
+            self.cover.imageLayer.contents = nil
+            
+            self.pause()
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @objc func pause() {
+        self.controlView.pause()  //按钮暂停
+        self.musicPlayer.pause()  //播放暂停
+        self.cover.stopRotating() //动画暂停        
+    }
+    
+    @objc func resumePlay() {
+        self.musicPlayer.play()
+        self.controlView.play()
+        self.cover.startRotating()
     }
 
-
+    @objc func remoteCommandPrevious() {
+        prepare(true)
+    }
+    
+    @objc func remoteCommandNext() {
+        prepare(true)
+    }
 }
 
 extension MusicViewController {

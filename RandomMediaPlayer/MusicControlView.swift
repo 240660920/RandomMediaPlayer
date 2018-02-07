@@ -10,9 +10,13 @@ import UIKit
 
 class MusicControlView: UIView {
 
-    var playBlock: ((_ isPlaying: Bool) -> ())?
+    var playBlock: ((_ isPlaying: Bool) -> (Bool))?
     var deleteBlock: (()->())?
-    var favorBlock: ((_ isFavor: Bool)->())?
+    var favorBlock: ((_ isFavor: Bool)->(Bool))?
+
+    let playBtn = UIButton()
+    let deleteBtn = UIButton()
+    let favorBtn = UIButton()
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -25,7 +29,6 @@ class MusicControlView: UIView {
     init() {
         super.init(frame: .zero)
         
-        let playBtn = UIButton()
         playBtn.setBackgroundImage(#imageLiteral(resourceName: "play"), for: .normal)
         playBtn.setBackgroundImage(#imageLiteral(resourceName: "pause"), for: .selected)
         playBtn.addTarget(self, action: #selector(play(sender:)), for: .touchUpInside)
@@ -35,7 +38,6 @@ class MusicControlView: UIView {
             make.width.height.equalTo(58)
         }
         
-        let deleteBtn = UIButton()
         deleteBtn.setBackgroundImage(#imageLiteral(resourceName: "delete"), for: .normal)
         deleteBtn.addTarget(self, action: #selector(deleteFunc), for: .touchUpInside)
         addSubview(deleteBtn)
@@ -43,7 +45,6 @@ class MusicControlView: UIView {
             make.left.centerY.equalToSuperview()
         }
         
-        let favorBtn = UIButton()
         favorBtn.setBackgroundImage(#imageLiteral(resourceName: "like_normal"), for: .normal)
         favorBtn.setBackgroundImage(#imageLiteral(resourceName: "like_selected"), for: .selected)
         favorBtn.addTarget(self, action: #selector(favor(sender:)), for: .touchUpInside)
@@ -57,10 +58,9 @@ class MusicControlView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @objc func play(sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-        
-        self.playBlock?(sender.isSelected)
+    @objc func play(sender: UIButton) {        
+        let result = self.playBlock?(!sender.isSelected)
+        sender.isSelected = result ?? false
     }
     
     @objc func deleteFunc() {
@@ -68,8 +68,20 @@ class MusicControlView: UIView {
     }
     
     @objc func favor(sender: UIButton) {
-        sender.isSelected = !sender.isSelected
+        let result = self.favorBlock?(!sender.isSelected)
         
-        self.favorBlock?(sender.isSelected)
+        sender.isSelected = result ?? false
+    }
+    
+    func play() {
+        playBtn.isSelected = true
+    }
+    
+    func pause() {
+        playBtn.isSelected = false
+    }
+    
+    func setFavor(_ isFavor: Bool) {
+        self.favorBtn.isSelected = isFavor
     }
 }
