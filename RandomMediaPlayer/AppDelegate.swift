@@ -54,6 +54,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UIApplication.shared.beginReceivingRemoteControlEvents()
         
+        TalkingData.sessionStarted("E18928AAC5AF4F50A3BADFF3DFAEA958", withChannelId: "App Store")
+        
         return true
     }
 

@@ -10,46 +10,81 @@ import UIKit
 import AVFoundation
 import MediaPlayer
 
-class MusicPlayer: AVAudioPlayer {
-    init(resourcePath: String) {
-        do {
-            let url = URL(fileURLWithPath: resourcePath)
-            
-            try super.init(contentsOf: url, fileTypeHint: nil)
-            
-        } catch {
-            let alert = UIAlertController(title: "播放错误", message: nil, preferredStyle: UIAlertControllerStyle.alert)
-            let action = UIAlertAction(title: "确定", style: UIAlertActionStyle.default, handler: { (action) in
-                alert.dismiss(animated: false, completion: nil)
-            })
-            alert.addAction(action)
-            UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
+class MusicPlayer {
+    var player: Any?
+    
+    init(music: Music) {
+        (self.player as? AVAudioPlayer)?.pause()
+        (self.player as? AudioStreamer)?.pause()
+        
+        if FileManager.default.fileExists(atPath: music.cachePath()) {
+            do {
+                try player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: music.cachePath()))
+            } catch {
+                try? FileManager.default.removeItem(atPath: music.cachePath())
+                
+                configStreamPlayer(music)
+            }
+        } else {
+            configStreamPlayer(music)
         }
-    }
-
-    @discardableResult override func play() -> Bool {
-        
-        MPNowPlayingInfoCenter.default().nowPlayingInfo = [MPMediaItemPropertyTitle : MusicManager.currentMusic()?.name ?? "" , MPMediaItemPropertyArtist : MusicManager.currentMusic()?.artist ?? "" , MPMediaItemPropertyArtwork : MPMediaItemArtwork(boundsSize: CGSize(width: 100, height: 100), requestHandler: { (size) -> UIImage in
-            return MusicManager.currentMusic()?.artwork ?? #imageLiteral(resourceName: "play")
-        }) , MPNowPlayingInfoPropertyElapsedPlaybackTime : Int(self.currentTime) , MPMediaItemPropertyPlaybackDuration : self.duration , MPNowPlayingInfoPropertyPlaybackRate : 1.0]
-        
-        let result = super.play()
-        
-        if result {
-            MPNowPlayingInfoCenter.default().playbackState = MPNowPlayingPlaybackState.playing
-        }
-        
-        return result
     }
     
-    override func pause() {
-        super.pause()
+    func configStreamPlayer(_ music: Music) {
+        player = AudioStreamer(url: URL(string: music.urlString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!))
         
-        var info = MPNowPlayingInfoCenter.default().nowPlayingInfo
-        info![MPNowPlayingInfoPropertyElapsedPlaybackTime] = Int(self.currentTime)
-        info![MPNowPlayingInfoPropertyPlaybackRate] = 0
-        MPNowPlayingInfoCenter.default().nowPlayingInfo = info
+        MusicManager.download(music)
+    }
+    
+    func setDelegate(_ delegate: Any) {
+        (self.player as? AVAudioPlayer)?.delegate = delegate as? AVAudioPlayerDelegate
+    }
+
+    func play() {
         
-        MPNowPlayingInfoCenter.default().playbackState = MPNowPlayingPlaybackState.paused
+//        MPNowPlayingInfoCenter.default().nowPlayingInfo = [MPMediaItemPropertyTitle : MusicManager.currentMusic()?.name ?? "" , MPMediaItemPropertyArtist : MusicManager.currentMusic()?.artist ?? "" , MPMediaItemPropertyArtwork : MPMediaItemArtwork(image: MusicManager.currentMusic()?.artwork ?? #imageLiteral(resourceName: "play")) , MPNowPlayingInfoPropertyElapsedPlaybackTime : Int(self.currentTime) , MPMediaItemPropertyPlaybackDuration : self.duration , MPNowPlayingInfoPropertyPlaybackRate : 1.0]
+        
+        if self.player is AVAudioPlayer {
+            (self.player as! AVAudioPlayer).play()
+        } else {
+            (self.player as! AudioStreamer).start()
+        }
+        
+//        if result {
+//            if #available(iOS 11.0, *) {
+//                MPNowPlayingInfoCenter.default().playbackState = MPNowPlayingPlaybackState.playing
+//            } else {
+//                // Fallback on earlier versions
+//            }
+//        }
+        
+//        return result
+    }
+    
+    func pause() {
+        guard self.player != nil else {
+            return
+        }
+        
+        if self.player is AVAudioPlayer {
+            if let _ = (self.player as? AVAudioPlayer)?.isPlaying {
+                (self.player as? AVAudioPlayer)?.pause()
+            }
+        } else {
+            if (self.player as! AudioStreamer).isPlaying() {
+                (self.player as! AudioStreamer).pause()
+            }
+        }
+        
+//        var info = MPNowPlayingInfoCenter.default().nowPlayingInfo
+//        info![MPNowPlayingInfoPropertyElapsedPlaybackTime] = Int(self.currentTime)
+//        info![MPNowPlayingInfoPropertyPlaybackRate] = 0
+//        MPNowPlayingInfoCenter.default().nowPlayingInfo = info
+//        
+//        if #available(iOS 11.0, *) {
+//            MPNowPlayingInfoCenter.default().playbackState = MPNowPlayingPlaybackState.paused
+//        } else {
+//            // Fallback on earlier versions
+//        }
     }
 }

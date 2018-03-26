@@ -31,6 +31,7 @@ class VideoTableViewCell: UITableViewCell {
         backgroundColor = UIColor.clear
         
         contentView.addSubview(thumbnailImageView)
+        thumbnailImageView.contentMode = .scaleAspectFill
         thumbnailImageView.snp.makeConstraints { (make) in
             make.left.right.top.equalToSuperview()
             make.height.equalTo(VideoTableViewCell.videoThumHeight)

@@ -59,6 +59,8 @@ class MusicCover: UIView {
             return
         }
         
+        self.stopRotating()
+        
         let pausedTime = self.imageLayer.timeOffset;
         self.imageLayer.speed = 1.0;
         self.imageLayer.timeOffset = 0.0;

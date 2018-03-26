@@ -9,6 +9,8 @@
 import UIKit
 import MediaPlayer
 import AVKit
+import SDWebImage
+import WebKit
 
 class VideoViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
@@ -75,45 +77,20 @@ class VideoViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     }
     
     func loadVideos() {
-        let plist = NSDictionary(contentsOfFile: Bundle.main.path(forResource: "VideoDescriptions", ofType: "plist")!)
-
+        let plist = NSDictionary(contentsOfFile: Bundle.main.path(forResource: "VideoDescriptions", ofType: "plist")!) as! [String : Any]
         
-        let paths = Bundle.main.paths(forResourcesOfType: nil, inDirectory: "Videos")
-        for bundlePath in paths {
-            let asset = AVURLAsset(url: URL(fileURLWithPath: bundlePath))
-            let generator = AVAssetImageGenerator(asset: asset)
+        for key in plist.keys {
             
-            var actualTime = CMTime(seconds: 0, preferredTimescale: 1)
-            do {
+            if let info = plist[key] as? [String : String] {
                 let video = Video()
                 
-                video.resourcePath = bundlePath
-                
-                let image = try UIImage(cgImage: generator.copyCGImage(at: CMTime(seconds: 0, preferredTimescale: 1), actualTime: &actualTime))
-                video.thumbnailImage = image
-                
-                let filename = bundlePath.components(separatedBy: "/").last ?? ""
-                
-                let cm_time = asset.duration
-                let seconds = Int(ceil(Double(cm_time.value) / 1000.0))
-                let timeString = self.getTimeString(seconds: seconds)
-                video.time = timeString
-                
-                
-                if let dic = plist?[filename] as? NSDictionary {
-                    if let description = dic["description"] as? String {
-                        video.descriptionString = description
-                    }
-
-                    if let author = dic["author"] as? String{
-                        video.author = author
-                    }
-                }
+                video.url = info["link"] ?? ""
+                video.title = key
+                video.time = info["time"] ?? "00:00"
+                video.author = info["author"] ?? ""
+                video.coverUrl = info["cover"] ?? ""
                 
                 videos.append(video)
-                
-            } catch {
-                
             }
         }
         
@@ -143,8 +120,8 @@ class VideoViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         
         let video = self.videos[indexPath.row]
         
-        cell?.thumbnailImageView.image = video.thumbnailImage
-        cell?.descLabel.text = video.descriptionString
+        cell?.thumbnailImageView.sd_setImage(with: URL(string: video.coverUrl.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!), completed: nil)
+        cell?.descLabel.text = video.title
         cell?.timeLabel.text = video.time
         cell?.authorLabel.text = video.author
         
@@ -153,18 +130,23 @@ class VideoViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let video = self.videos[indexPath.row]
-        return VideoTableViewCell.getCellHeight(ofText: video.descriptionString)
+        return VideoTableViewCell.getCellHeight(ofText: video.title)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let video = self.videos[indexPath.row]
-        let controller = AVPlayerViewController()
-        controller.player = AVPlayer(url: URL(fileURLWithPath: video.resourcePath))
-        self.present(controller, animated: true, completion: {
-            controller.player?.play()
-        })
+//        let controller = AVPlayerViewController()
+//        controller.player = AVPlayer(url: URL(string: video.url.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!)!)
+//        self.present(controller, animated: true, completion: {
+//            controller.player?.play()
+//        })
+        
+        let controller = VideoWebViewController()
+        controller.url = video.url
+        self.present(controller, animated: true, completion: nil)
+        
         
         NotificationCenter.default.post(name: Notification.Name.AVAudioSessionInterruption, object: nil)
     }
@@ -189,8 +171,9 @@ class VideoViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 
 class Video {
     var thumbnailImage: UIImage?
-    var descriptionString = ""
+    var title = ""
     var time = "00:00"
     var author = ""
-    var resourcePath = ""
+    var url = ""
+    var coverUrl = ""
 }

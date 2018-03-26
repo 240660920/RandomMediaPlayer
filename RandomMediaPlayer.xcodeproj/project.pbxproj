@@ -11,9 +11,22 @@
 		52517C4B202958EB0092C534 /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52517C4A202958EB0092C534 /* MusicPlayer.swift */; };
 		52517C4D202974D00092C534 /* MusicSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52517C4C202974D00092C534 /* MusicSegment.swift */; };
 		52517C4F2029757B0092C534 /* MusicSegment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52517C4E2029757B0092C534 /* MusicSegment.xib */; };
+		52B7B6F6202D7CC7008AC58B /* AudioStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B7B6F5202D7CC7008AC58B /* AudioStreamer.m */; };
+		52B7B6FF202D7F3A008AC58B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B7B6FE202D7F3A008AC58B /* CFNetwork.framework */; };
+		52B7B701202D7F3E008AC58B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B7B700202D7F3E008AC58B /* AudioToolbox.framework */; };
+		52B7B703202D7FEA008AC58B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B7B702202D7FEA008AC58B /* UIKit.framework */; };
+		52D15259202DE840006F9FBD /* VideoWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D15257202DE840006F9FBD /* VideoWebViewController.swift */; };
+		52D1525A202DE840006F9FBD /* VideoWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52D15258202DE840006F9FBD /* VideoWebViewController.xib */; };
+		52D1525D202E03DC006F9FBD /* libTalkingData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D1525C202E03DC006F9FBD /* libTalkingData.a */; };
+		52D1525F202E0507006F9FBD /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D1525E202E0506006F9FBD /* AdSupport.framework */; };
+		52D15261202E050C006F9FBD /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D15260202E050C006F9FBD /* CoreTelephony.framework */; };
+		52D15263202E0513006F9FBD /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D15262202E0513006F9FBD /* CoreMotion.framework */; };
+		52D15265202E051C006F9FBD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D15264202E051C006F9FBD /* Security.framework */; };
+		52D15267202E0524006F9FBD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D15266202E0524006F9FBD /* SystemConfiguration.framework */; };
+		52D15269202E052E006F9FBD /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D15268202E052E006F9FBD /* libz.tbd */; };
+		52D1526B202E0537006F9FBD /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D1526A202E0537006F9FBD /* libc++.tbd */; };
 		52EE4131202ACF0C008F6F78 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EE4130202ACF0C008F6F78 /* TabbarController.swift */; };
 		52EE4133202AD60A008F6F78 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EE4132202AD60A008F6F78 /* VideoTableViewCell.swift */; };
-		52EE4135202ADA6B008F6F78 /* Videos in Resources */ = {isa = PBXBuildFile; fileRef = 52EE4134202ADA6B008F6F78 /* Videos */; };
 		52EE4137202ADFF2008F6F78 /* VideoDescriptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52EE4136202ADFF2008F6F78 /* VideoDescriptions.plist */; };
 		52F87CA62027FDBD00048D54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F87CA52027FDBD00048D54 /* AppDelegate.swift */; };
 		52F87CA82027FDBD00048D54 /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F87CA72027FDBD00048D54 /* MusicViewController.swift */; };
@@ -26,7 +39,7 @@
 		52F87CD6202801C900048D54 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F87CD5202801C900048D54 /* VideoViewController.swift */; };
 		52F87CD820282DDB00048D54 /* MusicCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F87CD720282DDB00048D54 /* MusicCover.swift */; };
 		52F87CDA2028536900048D54 /* MusicControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F87CD92028536900048D54 /* MusicControlView.swift */; };
-		52F87CDC20285F3E00048D54 /* Songs in Resources */ = {isa = PBXBuildFile; fileRef = 52F87CDB20285F3E00048D54 /* Songs */; };
+		52FDABBE202DA56000411441 /* MusicLinks.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52FDABBD202DA56000411441 /* MusicLinks.txt */; };
 		F6F29DC41D4CEC56A1824097 /* Pods_RandomMediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF16E2A2CBA827CB8966FECA /* Pods_RandomMediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,9 +65,25 @@
 		52517C4A202958EB0092C534 /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
 		52517C4C202974D00092C534 /* MusicSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSegment.swift; sourceTree = "<group>"; };
 		52517C4E2029757B0092C534 /* MusicSegment.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicSegment.xib; sourceTree = "<group>"; };
+		52B7B6F4202D7CC7008AC58B /* AudioStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioStreamer.h; sourceTree = "<group>"; };
+		52B7B6F5202D7CC7008AC58B /* AudioStreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioStreamer.m; sourceTree = "<group>"; };
+		52B7B6FA202D7D6C008AC58B /* bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bridge.h; sourceTree = "<group>"; };
+		52B7B6FE202D7F3A008AC58B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		52B7B700202D7F3E008AC58B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		52B7B702202D7FEA008AC58B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		52D15257202DE840006F9FBD /* VideoWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoWebViewController.swift; sourceTree = "<group>"; };
+		52D15258202DE840006F9FBD /* VideoWebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoWebViewController.xib; sourceTree = "<group>"; };
+		52D1525B202E03DC006F9FBD /* TalkingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkingData.h; sourceTree = "<group>"; };
+		52D1525C202E03DC006F9FBD /* libTalkingData.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTalkingData.a; sourceTree = "<group>"; };
+		52D1525E202E0506006F9FBD /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		52D15260202E050C006F9FBD /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		52D15262202E0513006F9FBD /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		52D15264202E051C006F9FBD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		52D15266202E0524006F9FBD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		52D15268202E052E006F9FBD /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		52D1526A202E0537006F9FBD /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		52EE4130202ACF0C008F6F78 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		52EE4132202AD60A008F6F78 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
-		52EE4134202ADA6B008F6F78 /* Videos */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Videos; sourceTree = "<group>"; };
 		52EE4136202ADFF2008F6F78 /* VideoDescriptions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = VideoDescriptions.plist; sourceTree = "<group>"; };
 		52F87CA22027FDBD00048D54 /* RandomMediaPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomMediaPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52F87CA52027FDBD00048D54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,7 +102,7 @@
 		52F87CD5202801C900048D54 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		52F87CD720282DDB00048D54 /* MusicCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCover.swift; sourceTree = "<group>"; };
 		52F87CD92028536900048D54 /* MusicControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicControlView.swift; sourceTree = "<group>"; };
-		52F87CDB20285F3E00048D54 /* Songs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Songs; sourceTree = "<group>"; };
+		52FDABBD202DA56000411441 /* MusicLinks.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MusicLinks.txt; sourceTree = "<group>"; };
 		BEC672636E2C1F62F73EB5D0 /* Pods-RandomMediaPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomMediaPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RandomMediaPlayer/Pods-RandomMediaPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 		CCE388A7768D22BF25943CD0 /* Pods-RandomMediaPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomMediaPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-RandomMediaPlayer/Pods-RandomMediaPlayer.release.xcconfig"; sourceTree = "<group>"; };
 		CF16E2A2CBA827CB8966FECA /* Pods_RandomMediaPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RandomMediaPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +113,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52D1526B202E0537006F9FBD /* libc++.tbd in Frameworks */,
+				52D15269202E052E006F9FBD /* libz.tbd in Frameworks */,
+				52D15267202E0524006F9FBD /* SystemConfiguration.framework in Frameworks */,
+				52D15265202E051C006F9FBD /* Security.framework in Frameworks */,
+				52D15263202E0513006F9FBD /* CoreMotion.framework in Frameworks */,
+				52D15261202E050C006F9FBD /* CoreTelephony.framework in Frameworks */,
+				52D1525F202E0507006F9FBD /* AdSupport.framework in Frameworks */,
+				52B7B703202D7FEA008AC58B /* UIKit.framework in Frameworks */,
+				52B7B701202D7F3E008AC58B /* AudioToolbox.framework in Frameworks */,
+				52D1525D202E03DC006F9FBD /* libTalkingData.a in Frameworks */,
+				52B7B6FF202D7F3A008AC58B /* CFNetwork.framework in Frameworks */,
 				F6F29DC41D4CEC56A1824097 /* Pods_RandomMediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,6 +145,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52B7B6F3202D7CC7008AC58B /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				52B7B6F4202D7CC7008AC58B /* AudioStreamer.h */,
+				52B7B6F5202D7CC7008AC58B /* AudioStreamer.m */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
 		52F87C992027FDBD00048D54 = {
 			isa = PBXGroup;
 			children = (
@@ -130,8 +179,8 @@
 		52F87CA42027FDBD00048D54 /* RandomMediaPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				52EE4134202ADA6B008F6F78 /* Videos */,
-				52F87CDB20285F3E00048D54 /* Songs */,
+				52FDABBD202DA56000411441 /* MusicLinks.txt */,
+				52B7B6F3202D7CC7008AC58B /* Player */,
 				52F87CA52027FDBD00048D54 /* AppDelegate.swift */,
 				52EE4130202ACF0C008F6F78 /* TabbarController.swift */,
 				52F87CA72027FDBD00048D54 /* MusicViewController.swift */,
@@ -144,11 +193,16 @@
 				52F87CA92027FDBD00048D54 /* Main.storyboard */,
 				52F87CD5202801C900048D54 /* VideoViewController.swift */,
 				52EE4132202AD60A008F6F78 /* VideoTableViewCell.swift */,
+				52D15257202DE840006F9FBD /* VideoWebViewController.swift */,
+				52D15258202DE840006F9FBD /* VideoWebViewController.xib */,
 				52F87CAC2027FDBD00048D54 /* Assets.xcassets */,
 				52F87CAE2027FDBD00048D54 /* LaunchScreen.storyboard */,
 				52F87CB12027FDBD00048D54 /* Info.plist */,
 				52F87CD32028005E00048D54 /* Defines.swift */,
 				52EE4136202ADFF2008F6F78 /* VideoDescriptions.plist */,
+				52B7B6FA202D7D6C008AC58B /* bridge.h */,
+				52D1525C202E03DC006F9FBD /* libTalkingData.a */,
+				52D1525B202E03DC006F9FBD /* TalkingData.h */,
 			);
 			path = RandomMediaPlayer;
 			sourceTree = "<group>";
@@ -183,6 +237,16 @@
 		E31BD9C19935DF4924997684 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				52D1526A202E0537006F9FBD /* libc++.tbd */,
+				52D15268202E052E006F9FBD /* libz.tbd */,
+				52D15266202E0524006F9FBD /* SystemConfiguration.framework */,
+				52D15264202E051C006F9FBD /* Security.framework */,
+				52D15262202E0513006F9FBD /* CoreMotion.framework */,
+				52D15260202E050C006F9FBD /* CoreTelephony.framework */,
+				52D1525E202E0506006F9FBD /* AdSupport.framework */,
+				52B7B702202D7FEA008AC58B /* UIKit.framework */,
+				52B7B700202D7F3E008AC58B /* AudioToolbox.framework */,
+				52B7B6FE202D7F3A008AC58B /* CFNetwork.framework */,
 				CF16E2A2CBA827CB8966FECA /* Pods_RandomMediaPlayer.framework */,
 			);
 			name = Frameworks;
@@ -259,7 +323,7 @@
 				TargetAttributes = {
 					52F87CA12027FDBD00048D54 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -303,13 +367,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52EE4135202ADA6B008F6F78 /* Videos in Resources */,
 				52F87CB02027FDBD00048D54 /* LaunchScreen.storyboard in Resources */,
 				52517C4F2029757B0092C534 /* MusicSegment.xib in Resources */,
 				52EE4137202ADFF2008F6F78 /* VideoDescriptions.plist in Resources */,
+				52FDABBE202DA56000411441 /* MusicLinks.txt in Resources */,
 				52F87CAD2027FDBD00048D54 /* Assets.xcassets in Resources */,
 				52F87CAB2027FDBD00048D54 /* Main.storyboard in Resources */,
-				52F87CDC20285F3E00048D54 /* Songs in Resources */,
+				52D1525A202DE840006F9FBD /* VideoWebViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,10 +419,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RandomMediaPlayer/Pods-RandomMediaPlayer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,7 +464,9 @@
 				52F87CD6202801C900048D54 /* VideoViewController.swift in Sources */,
 				52F87CD42028005E00048D54 /* Defines.swift in Sources */,
 				52F87CDA2028536900048D54 /* MusicControlView.swift in Sources */,
+				52D15259202DE840006F9FBD /* VideoWebViewController.swift in Sources */,
 				52F87CD820282DDB00048D54 /* MusicCover.swift in Sources */,
+				52B7B6F6202D7CC7008AC58B /* AudioStreamer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,15 +633,23 @@
 			baseConfigurationReference = BEC672636E2C1F62F73EB5D0 /* Pods-RandomMediaPlayer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X6DDKY7VC2;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = RandomMediaPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cn.RandomMediaPlayer;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RandomMediaPlayer",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cn.veryfit3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = RandomMediaPlayer/bridge.h;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -582,15 +658,25 @@
 			baseConfigurationReference = CCE388A7768D22BF25943CD0 /* Pods-RandomMediaPlayer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X6DDKY7VC2;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = TJR8C6FR5Z;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = RandomMediaPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cn.RandomMediaPlayer;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RandomMediaPlayer",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cn.veryfit3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "f242b6c6-ddf1-471d-8d2b-bd946eab9c75";
+				PROVISIONING_PROFILE_SPECIFIER = "vefyfit3-appstore";
+				SWIFT_OBJC_BRIDGING_HEADER = RandomMediaPlayer/bridge.h;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

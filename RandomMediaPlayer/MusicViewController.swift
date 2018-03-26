@@ -86,6 +86,8 @@ class MusicViewController: UIViewController,AVAudioPlayerDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         
         NotificationCenter.default.addObserver(self, selector: #selector(playInterrpted), name: Notification.Name.AVAudioSessionInterruption, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didGetMusicInfo(notice:)), name: Notification.Name.init("didGetMusicInfo"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(audioStreamerStateChanged(notice:)), name: NSNotification.Name.ASStatusChanged, object: nil)
         
         MPRemoteCommandCenter.shared().playCommand.addTarget(self, action: #selector(resumePlay))
         MPRemoteCommandCenter.shared().pauseCommand.addTarget(self, action: #selector(pause))
@@ -104,6 +106,7 @@ class MusicViewController: UIViewController,AVAudioPlayerDelegate {
         
         cover.frame = CGRect(x: (blackMask.frame.width - 200) / 2, y: 82, width: 200, height: 200)
         cover.backgroundColor = blackMask.backgroundColor
+        cover.imageLayer.contents = #imageLiteral(resourceName: "logo").cgImage
         blackMask.addSubview(cover)
         
         let segment = Bundle.main.loadNibNamed("MusicSegment", owner: nil, options: nil)![0] as! MusicSegment
@@ -129,11 +132,9 @@ class MusicViewController: UIViewController,AVAudioPlayerDelegate {
             }
             
             if shoudPlay , MusicManager.currentMusic() != nil{
-                let result = self.musicPlayer.play()
-                if result {
-                    self.cover.startRotating()
-                }
-                return result
+                self.musicPlayer.play()
+                self.cover.startRotating()
+                return true
             } else {
                 self.cover.stopRotating()
                 self.musicPlayer.pause()
@@ -145,11 +146,9 @@ class MusicViewController: UIViewController,AVAudioPlayerDelegate {
             if let music = MusicManager.currentMusic() {
                 MusicManager.delete(music)
                 
-                if let image = music.artwork {
-                    self.cover.imageLayer.contents = image
-                }
+                self.cover.imageLayer.contents = MusicManager.currentMusic()?.artwork ?? #imageLiteral(resourceName: "logo").cgImage
             } else {
-                self.cover.imageLayer.contents = nil
+                self.cover.imageLayer.contents = #imageLiteral(resourceName: "logo").cgImage
             }
             
             let shouldPlay = MusicManager.list(ofType: MusicManager.listType).count > 0
@@ -181,6 +180,13 @@ class MusicViewController: UIViewController,AVAudioPlayerDelegate {
         prepare(true)
     }
     
+    @objc func audioStreamerStateChanged(notice: Notification) {
+        let streamer = notice.object as! AudioStreamer
+        if streamer.state.rawValue == 8 , streamer.errorCode.rawValue == 0 {
+            prepare(true)
+        }
+    }
+    
     @objc func playInterrpted() {
         self.pause()
     }
@@ -188,7 +194,7 @@ class MusicViewController: UIViewController,AVAudioPlayerDelegate {
     
     func prepare(_ shouldPlay: Bool) {
         if self.musicPlayer != nil {
-            self.musicPlayer.stop()
+            self.musicPlayer.pause()
         }
         
         let list = MusicManager.list(ofType: MusicManager.listType)
@@ -198,13 +204,13 @@ class MusicViewController: UIViewController,AVAudioPlayerDelegate {
             
             let music = list[random]
             
-            self.musicPlayer = MusicPlayer(resourcePath: music.resourcePath())
-            self.musicPlayer.delegate = self
+            self.musicPlayer = MusicPlayer(music: music)
+            self.musicPlayer.setDelegate(self)
             
-            self.songNameLabel.text = music.name
+            self.songNameLabel.text = music.title
             self.singerNameLabel.text = music.artist
             
-            self.cover.imageLayer.contents = music.artwork?.cgImage
+            self.cover.imageLayer.contents = music.artwork?.cgImage ?? #imageLiteral(resourceName: "logo").cgImage
             
             self.controlView.setFavor(music.isFavor)
             
@@ -216,7 +222,7 @@ class MusicViewController: UIViewController,AVAudioPlayerDelegate {
             self.songNameLabel.text = ""
             self.singerNameLabel.text = ""
             
-            self.cover.imageLayer.contents = nil
+            self.cover.imageLayer.contents = #imageLiteral(resourceName: "logo").cgImage
             
             self.pause()
         }
@@ -224,16 +230,31 @@ class MusicViewController: UIViewController,AVAudioPlayerDelegate {
     
     @objc func pause() {
         self.controlView.pause()  //按钮暂停
-        self.musicPlayer.pause()  //播放暂停
-        self.cover.stopRotating() //动画暂停        
+        self.cover.stopRotating() //动画暂停
+        
+        if self.musicPlayer != nil {
+            self.musicPlayer.pause()  //播放暂停
+        }
     }
     
     @objc func resumePlay() {
         self.musicPlayer.play()
         self.controlView.play()
+
         self.cover.startRotating()
     }
 
+    @objc func didGetMusicInfo(notice: Notification) {
+        if let music = notice.object as? Music , music == MusicManager.currentMusic() {
+            self.cover.imageLayer.contents = music.artwork?.cgImage ?? #imageLiteral(resourceName: "logo").cgImage
+            self.songNameLabel.text = music.title
+            self.singerNameLabel.text = music.artist
+        }
+        
+    }
+    
+    
+    
     @objc func remoteCommandPrevious() {
         prepare(true)
     }
@@ -254,7 +275,11 @@ extension MusicViewController {
         controlView.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.width.equalTo(251)
-            make.bottom.equalToSuperview().offset(-55)
+            if UIScreen.main.bounds.size.height <= 568 {
+                make.bottom.equalToSuperview().offset(-25)
+            } else {
+                make.bottom.equalToSuperview().offset(-55)
+            }
             make.height.equalTo(58)
         }
         

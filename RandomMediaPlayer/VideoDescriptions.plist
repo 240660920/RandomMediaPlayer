@@ -2,19 +2,225 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>test2.mp4</key>
+	<key>Teen Beginners Bodybuilding Training - Upper Body - Chest, Arms, Shoulders</key>
 	<dict>
 		<key>author</key>
-		<string>author2</string>
-		<key>description</key>
-		<string>desc2</string>
+		<string>Buff Dudes</string>
+		<key>time</key>
+		<string>18:48</string>
+		<key>cover</key>
+		<string>http://61.164.47.151:1114/fitness/pic/1.jpg</string>
+        <key>link</key>
+        <string>https://www.youtube.com/watch?v=7qM-DRn10SE</string>
 	</dict>
-	<key>test.mp4</key>
+	<key>20 MIN HOME WEIGHT LOSS WORKOUT || No equipment training</key>
 	<dict>
-		<key>description</key>
-		<string>desc</string>
-		<key>author</key>
-		<string>author</string>
+        <key>author</key>
+        <string>Rachel Aust</string>
+        <key>time</key>
+        <string>23:03</string>
+        <key>cover</key>
+        <string>http://61.164.47.151:1114/fitness/pic/16.jpg</string>
+        <key>link</key>
+        <string>https://www.youtube.com/watch?v=1ibbX_2Beqs</string>
 	</dict>
+    <key>30 Minute at Home Strength Workout | Clutch Life: Ashley Conrad's 24/7 Fitness Trainer</key>
+    <dict>
+        <key>author</key>
+        <string>Bodybuilding.com</string>
+        <key>time</key>
+        <string>29:50</string>
+        <key>cover</key>
+        <string>http://61.164.47.151:1114/fitness/pic/2.jpg</string>
+        <key>link</key>
+        <string>https://www.youtube.com/watch?v=YdB1HMCldJY</string>
+    </dict>
+    <key>Best fitness courses to study in India- SIMPLE AND EASY</key>
+    <dict>
+        <key>author</key>
+        <string>Tarun Gill</string>
+        <key>time</key>
+        <string>7:08</string>
+        <key>cover</key>
+        <string>http://61.164.47.151:1114/fitness/pic/3.jpg</string>
+        <key>link</key>
+        <string>https://www.youtube.com/watch?v=PCuZRpdadlw</string>
+    </dict>
+    <key>Fat Burning Cardio Workout - 37 Minute Fitness Blender Cardio Workout at Home</key>
+    <dict>
+        <key>author</key>
+        <string>FitnessBlender</string>
+        <key>time</key>
+        <string>37:09</string>
+        <key>cover</key>
+        <string>http://61.164.47.151:1114/fitness/pic/17.jpg</string>
+        <key>link</key>
+        <string>https://www.youtube.com/watch?v=fcN37TxBE_s</string>
+    </dict>
+    <key>How To Train For Mass | Arnold Schwarzenegger's Blueprint Training Program</key>
+    <dict>
+        <key>author</key>
+        <string>Bodybuilding.com</string>
+        <key>time</key>
+        <string>17:12</string>
+        <key>cover</key>
+        <string>http://61.164.47.151:1114/fitness/pic/4.jpg</string>
+        <key>link</key>
+        <string>https://www.youtube.com/watch?v=o9zCgPtsups</string>
+    </dict>
+    <key>Full Body Workout For Beginners (BUILD MUSCLE WORKOUT!)</key>
+    <dict>
+        <key>author</key>
+        <string>Vince Del Monte</string>
+        <key>time</key>
+        <string>9:12</string>
+        <key>cover</key>
+        <string>http://61.164.47.151:1114/fitness/pic/5.jpg</string>
+        <key>link</key>
+        <string>https://www.youtube.com/watch?v=JABysaGd09A</string>
+    </dict>
+    <key>Kris Gethin's 4Weeks2Shred Training Program</key>
+    <dict>
+        <key>author</key>
+        <string>Bodybuilding.com</string>
+        <key>time</key>
+        <string>9:42</string>
+        <key>cover</key>
+        <string>http://61.164.47.151:1114/fitness/pic/6.jpg</string>
+        <key>link</key>
+        <string>https://www.youtube.com/watch?v=W-dFTKnBih4</string>
+    </dict>
+    <key>Cheap Bodybuilding Foods (Bodybuilding On A Budget)</key>
+    <dict>
+        <key>author</key>
+        <string>Lee Hayward</string>
+        <key>time</key>
+        <string>13:20</string>
+        <key>cover</key>
+        <string>http://61.164.47.151:1114/fitness/pic/7.jpg</string>
+        <key>link</key>
+        <string>https://www.youtube.com/watch?v=vA86WYkPOUY</string>
+    </dict>
+    <key>Cardio-Dance modelFIT Workout</key>
+    <dict>
+        <key>author</key>
+        <string>POPSUGAR Fitness</string>
+        <key>time</key>
+        <string>34:44</string>
+        <key>cover</key>
+        <string>http://61.164.47.151:1114/fitness/pic/18.jpg</string>
+        <key>link</key>
+        <string>https://www.youtube.com/watch?v=jVRlQFSsODg</string>
+    </dict>
+    <key>The 10's Beginner Workout (Body Weight Only)</key>
+    <dict>
+        <key>author</key>
+        <string>Brian Turner</string>
+        <key>time</key>
+        <string>4:31</string>
+        <key>cover</key>
+        <string>http://61.164.47.151:1114/fitness/pic/8.jpg</string>
+        <key>link</key>
+        <string>https://www.youtube.com/watch?v=L77b57erQ4M</string>
+    </dict>
+    <key>Easy Vegan BodyBuilding Meal Prep</key>
+    <dict>
+        <key>author</key>
+        <string>BiancaTaylor</string>
+        <key>time</key>
+        <string>12:23</string>
+        <key>cover</key>
+        <string>http://61.164.47.151:1114/fitness/pic/9.jpg</string>
+        <key>link</key>
+        <string>https://www.youtube.com/watch?v=PGi6i-PX9wk</string>
+    </dict>
+    <key>Female Fitness Motivation - fitness model bodybuilding training</key>
+    <dict>
+        <key>author</key>
+        <string>Workout Music Service</string>
+        <key>time</key>
+        <string>1:09:11</string>
+        <key>cover</key>
+        <string>http://61.164.47.151:1114/fitness/pic/10.jpg</string>
+        <key>link</key>
+        <string>https://www.youtube.com/watch?v=bX_HidQ3mKQ</string>
+    </dict>
+    <key>Fitness model diet, cycle and training</key>
+    <dict>
+        <key>author</key>
+        <string>Tarun Gill</string>
+        <key>time</key>
+        <string>33:37</string>
+        <key>cover</key>
+        <string>http://61.164.47.151:1114/fitness/pic/11.jpg</string>
+        <key>link</key>
+        <string>https://www.youtube.com/watch?v=X3zvYvojpy0</string>
+    </dict>
+    <key>32 Minute Home Cardio Workout with No Equipment - Calorie Blasting Cardio Training</key>
+    <dict>
+        <key>author</key>
+        <string>FitnessBlender</string>
+        <key>time</key>
+        <string>32:54</string>
+        <key>cover</key>
+        <string>http://61.164.47.151:1114/fitness/pic/12.jpg</string>
+        <key>link</key>
+        <string>https://www.youtube.com/watch?v=qWy_aOlB45Y</string>
+    </dict>
+    <key>Dairy-Free Chicken Zasta | Fuel and Gainz by Fit Men Cook</key>
+    <dict>
+        <key>author</key>
+        <string>Bodybuilding.com</string>
+        <key>time</key>
+        <string>1:27</string>
+        <key>cover</key>
+        <string>http://61.164.47.151:1114/fitness/pic/13.jpg</string>
+        <key>link</key>
+        <string>https://www.youtube.com/watch?v=DzSkqBWOpOE</string>
+    </dict>
+    <key>Behind the Scenes | FYR: Hannah Eden's 30-Day Fitness Plan</key>
+    <dict>
+        <key>author</key>
+        <string>Bodybuilding.com</string>
+        <key>time</key>
+        <string>4:20</string>
+        <key>cover</key>
+        <string>http://61.164.47.151:1114/fitness/pic/14.jpg</string>
+        <key>link</key>
+        <string>https://www.youtube.com/watch?v=UnSfo1KQxXc</string>
+    </dict>
+    <key>My Gym Routine: Chest and Arms</key>
+    <dict>
+        <key>author</key>
+        <string>Rachel Aust</string>
+        <key>time</key>
+        <string>7:36</string>
+        <key>cover</key>
+        <string>http://61.164.47.151:1114/fitness/pic/15.jpg</string>
+        <key>link</key>
+        <string>https://www.youtube.com/watch?v=5YmxEvxkrAY</string>
+    </dict>
+    <key>No Gym Boxing/MMA Workout -- Training at Home!</key>
+    <dict>
+        <key>author</key>
+        <string>fightTIPS</string>
+        <key>time</key>
+        <string>4:21</string>
+        <key>cover</key>
+        <string>http://61.164.47.151:1114/fitness/pic/19.jpg</string>
+        <key>link</key>
+        <string>https://www.youtube.com/watch?v=8-aI8Fp2bPU</string>
+    </dict>
+    <key>30 Minute Beginner Weight Training for Beginners - Home Strength Training Full Body Dumbbell Workout</key>
+    <dict>
+        <key>author</key>
+        <string>HASfit</string>
+        <key>time</key>
+        <string>32:21</string>
+        <key>cover</key>
+        <string>http://61.164.47.151:1114/fitness/pic/20.jpg</string>
+        <key>link</key>
+        <string>https://www.youtube.com/watch?v=QAuGN3nd6AU</string>
+    </dict>
 </dict>
 </plist>

@@ -23,7 +23,7 @@
                     <inset key="titleEdgeInsets" minX="-12" minY="14" maxX="0.0" maxY="0.0"/>
                     <inset key="imageEdgeInsets" minX="23" minY="-16" maxX="0.0" maxY="0.0"/>
                     <state key="normal" title="Like" image="like_small">
-                        <color key="titleColor" red="0.95294117647058818" green="0.78823529411764703" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleColor" red="0.95294117647058818" green="0.78823529411764703" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="click:" destination="iN0-l3-epB" eventType="touchUpInside" id="lt9-4O-H33"/>
@@ -36,7 +36,7 @@
                     <inset key="titleEdgeInsets" minX="0.0" minY="17" maxX="0.0" maxY="0.0"/>
                     <inset key="imageEdgeInsets" minX="43" minY="-16" maxX="0.0" maxY="0.0"/>
                     <state key="normal" title="Recommend" image="recommend">
-                        <color key="titleColor" red="0.95294117649999999" green="0.78823529410000004" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleColor" red="0.99607843137254903" green="0.78823529411764703" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="click:" destination="iN0-l3-epB" eventType="touchUpInside" id="Nnu-Qi-2sx"/>
